@@ -11,62 +11,62 @@ if __name__ == "__main__":
     #
     diabetes = load_diabetes()
 
-    x_train, x_test, t_train, t_test = train_test_split(diabetes.data, diabetes.target, test_size=0.2, random_state=0)
+    X_train, X_test, y_train, y_test = train_test_split(diabetes.data, diabetes.target, test_size=0.2, random_state=0)
 
     #
     # preprocessing
     #
     std = StandardScaler()
-    std.fit(x_train)
+    std.fit(X_train)
 
-    x_train_std = std.transform(x_train)
-    x_test_std = std.transform(x_test)
+    X_train_std = std.transform(X_train)
+    X_test_std = std.transform(X_test)
 
     #
     # linear regression
     #
     reg = linear_model.LinearRegression()
-    reg.fit(x_train_std, t_train)
+    reg.fit(X_train_std, y_train)
 
-    t_pred = reg.predict(x_test_std)
+    y_pred = reg.predict(X_test_std)
 
     print("Linear Regression")
-    print("Mean Squared Error: {:.2f}".format(mean_squared_error(t_test, t_pred)))
-    print("R2 score: {:.2f}".format(r2_score(t_test, t_pred)))
+    print("Mean Squared Error: {:.2f}".format(mean_squared_error(y_test, y_pred)))
+    print("R2 score: {:.2f}".format(r2_score(y_test, y_pred)))
 
     #
     # ridge regression
     #
     reg = linear_model.Ridge(alpha=0.5)
-    reg.fit(x_train_std, t_train)
+    reg.fit(X_train_std, y_train)
 
-    t_pred = reg.predict(x_test_std)
+    y_pred = reg.predict(X_test_std)
 
     print("\nRidge Regression")
-    print("Mean Squared Error: {:.2f}".format(mean_squared_error(t_test, t_pred)))
-    print("R2 score: {:.2f}".format(r2_score(t_test, t_pred)))
+    print("Mean Squared Error: {:.2f}".format(mean_squared_error(y_test, y_pred)))
+    print("R2 score: {:.2f}".format(r2_score(y_test, y_pred)))
 
     #
     # lasso
     #
     reg = linear_model.Lasso(alpha=0.1)
-    reg.fit(x_train_std, t_train)
+    reg.fit(X_train_std, y_train)
 
-    t_pred = reg.predict(x_test_std)
+    y_pred = reg.predict(X_test_std)
 
     print("\nLASSO")
-    print("Mean Squared Error: {:.2f}".format(mean_squared_error(t_test, t_pred)))
-    print("R2 score: {:.2f}".format(r2_score(t_test, t_pred)))
+    print("Mean Squared Error: {:.2f}".format(mean_squared_error(y_test, y_pred)))
+    print("R2 score: {:.2f}".format(r2_score(y_test, y_pred)))
 
     #
     # elastic-net
     #
     reg = linear_model.ElasticNet(alpha=1.0, l1_ratio=0.5)
-    reg.fit(x_train_std, t_train)
+    reg.fit(X_train_std, y_train)
 
-    t_pred = reg.predict(x_test_std)
+    y_pred = reg.predict(X_test_std)
 
     print("\nElastic-Net")
-    print("Mean Squared Error: {:.2f}".format(mean_squared_error(t_test, t_pred)))
-    print("R2 score: {:.2f}".format(r2_score(t_test, t_pred)))
+    print("Mean Squared Error: {:.2f}".format(mean_squared_error(y_test, y_pred)))
+    print("R2 score: {:.2f}".format(r2_score(y_test, y_pred)))
     
