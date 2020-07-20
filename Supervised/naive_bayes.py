@@ -2,8 +2,8 @@ import pandas as pd
 
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
-from sklearn.naive_bayes import GaussianNB
-from sklearn.preprocessing import StandardScaler
+from sklearn.naive_bayes import ComplementNB
+from sklearn.preprocessing import MinMaxScaler
 
 
 if __name__ == "__main__":
@@ -19,19 +19,18 @@ if __name__ == "__main__":
     #
     # preprocessing
     #
-    std = StandardScaler()
-    std.fit(X_train)
+    norm = MinMaxScaler()
 
-    X_train_std = std.transform(X_train)
-    X_test_std = std.transform(X_test)
+    X_train_norm = norm.fit_transform(X_train)
+    X_test_norm = norm.transform(X_test)
 
     #
     # naive bayes
     #
-    clf = GaussianNB()
-    clf.fit(X_train_std, y_train)
+    clf = ComplementNB()
+    clf.fit(X_train_norm, y_train)
 
-    y_pred = clf.predict(X_test_std)
+    y_pred = clf.predict(X_test_norm)
 
     #
     # performance evaluation
