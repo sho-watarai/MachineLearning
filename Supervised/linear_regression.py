@@ -17,9 +17,8 @@ if __name__ == "__main__":
     # preprocessing
     #
     std = StandardScaler()
-    std.fit(X_train)
-
-    X_train_std = std.transform(X_train)
+    
+    X_train_std = std.fit_transform(X_train)
     X_test_std = std.transform(X_test)
 
     #
