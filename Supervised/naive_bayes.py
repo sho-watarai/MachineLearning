@@ -2,7 +2,7 @@ import pandas as pd
 
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
-from sklearn.naive_bayes import ComplementNB
+from sklearn.naive_bayes import MultinomialNB
 from sklearn.preprocessing import MinMaxScaler
 
 
@@ -27,7 +27,7 @@ if __name__ == "__main__":
     #
     # naive bayes
     #
-    clf = ComplementNB()
+    clf = MultinomialNB()
     clf.fit(X_train_norm, y_train)
 
     y_pred = clf.predict(X_test_norm)
