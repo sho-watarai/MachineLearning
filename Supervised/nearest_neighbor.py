@@ -35,6 +35,7 @@ if __name__ == "__main__":
     plt.figure(figsize=(8, 6))
     plt.pcolormesh(xx, yy, z, cmap=ListedColormap(["blue", "green", "red"]))
     plt.scatter(X[:, 0], X[:, 1], c=y, cmap=ListedColormap(["b", "g", "r"]), edgecolor='k', s=20)  # training points
+    plt.title("k-Nearest Neighbor Classification")
     plt.xlim(xx.min(), xx.max())
     plt.ylim(yy.min(), yy.max())
     plt.show()
