@@ -40,6 +40,5 @@ if __name__ == "__main__":
     ax.set_title("k-Nearest Neighbor Classification")
     ax.set_xlim(xx.min(), xx.max())
     ax.set_ylim(yy.min(), yy.max())
-    
     plt.show()
     
