@@ -34,11 +34,11 @@ if __name__ == "__main__":
     
     z = clf.predict(zz).reshape(xx.shape)
 
-    fig, ax = plt.subplots(figsize=(8, 6))
-    ax.pcolormesh(xx, yy, z, cmap=ListedColormap(["#1f77b4", "#2ca02c", "#ff7f0e"]))
-    ax.scatter(X[:, 0], X[:, 1], c=y, cmap=ListedColormap(["#1f77b4", "#2ca02c", "#ff7f0e"]), edgecolor="k", s=20)
-    ax.set_title("k-Nearest Neighbor Classification")
-    ax.set_xlim(xx.min(), xx.max())
-    ax.set_ylim(yy.min(), yy.max())
+    plt.figure(figsize=(8, 6))
+    plt.pcolormesh(xx, yy, z, cmap=ListedColormap(["#1f77b4", "#2ca02c", "#ff7f0e"]))
+    plt.scatter(X[:, 0], X[:, 1], c=y, cmap=ListedColormap(["#1f77b4", "#2ca02c", "#ff7f0e"]), edgecolor="k", s=20)
+    plt.title("k-Nearest Neighbor Classification")
+    plt.xlim(xx.min(), xx.max())
+    plt.ylim(yy.min(), yy.max())
     plt.show()
     
