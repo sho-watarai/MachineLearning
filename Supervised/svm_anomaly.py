@@ -18,7 +18,7 @@ if __name__ == "__main__":
     X_outlier = np.random.uniform(low=-4, high=4, size=(25, 2))
 
     #
-    # one-class svm
+    # one-class SVM
     #
     clf = OneClassSVM(nu=0.1, kernel="rbf", gamma=0.1)
     clf.fit(X_train)
