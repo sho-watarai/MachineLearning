@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 from sklearn.datasets import load_iris
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 
+np.random.seed(0)
+
 
 if __name__ == "__main__":
     #
