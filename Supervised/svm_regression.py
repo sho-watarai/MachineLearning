@@ -20,7 +20,7 @@ if __name__ == "__main__":
     plt.scatter(X, y, color="k", label="data", facecolor="none")
     for i, (kernel, color) in enumerate(zip(["linear", "rbf", "poly"], ["#1f77b4", "#2ca02c", "#ff7f0e"])):
         #
-        # kernel svr
+        # kernel SVR
         #
         reg = SVR(C=100, kernel=kernel, degree=3, gamma=0.1, epsilon=0.1)
         reg.fit(X, y.ravel())
