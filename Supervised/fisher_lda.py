@@ -17,7 +17,7 @@ if __name__ == "__main__":
     y = iris.target
     
     #
-    # Fisher Linear Discriminant Analysis
+    # fisher linear discriminant analysis
     #
     lda = LinearDiscriminantAnalysis(n_components=2)
 
