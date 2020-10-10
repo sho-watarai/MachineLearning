@@ -3,7 +3,7 @@ import numpy as np
 
 from matplotlib.colors import ListedColormap
 from sklearn.datasets import load_breast_cancer, load_iris
-from sklearn.metrics import confusion_matrix, plot_confusion_matrix, plot_precision_recall_curve, plot_roc_curve
+from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier, plot_tree
 
