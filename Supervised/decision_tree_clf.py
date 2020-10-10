@@ -46,10 +46,6 @@ def decision_tree_classification():
     #
     # visualization
     #
-    plot_confusion_matrix(clf, X_test, y_test, cmap="hot")
-    plot_precision_recall_curve(clf, X_test, y_test)
-    plot_roc_curve(clf, X_test, y_test)
-
     plt.figure(figsize=(8, 6))
     plot_tree(clf, filled=True, feature_names=breast.feature_names)
 
