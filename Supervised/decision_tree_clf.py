@@ -19,7 +19,7 @@ def decision_tree_classification():
     #
     # decision tree
     #
-    clf = DecisionTreeClassifier(criterion="gini", max_leaf_nodes=5, random_state=0)
+    clf = DecisionTreeClassifier(criterion="gini", max_leaf_nodes=5)
     clf.fit(X_train, y_train)
 
     y_pred = clf.predict(X_test)
