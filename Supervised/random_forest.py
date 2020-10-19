@@ -19,7 +19,8 @@ def random_forest_classification():
     #
     # decision tree
     #
-    clf = RandomForestClassifier(n_estimators=10, criterion="gini", max_leaf_nodes=5, random_state=0)
+    clf = RandomForestClassifier(n_estimators=10, criterion="gini", max_features="auto", max_leaf_nodes=5,
+                                 random_state=0)
     clf.fit(X_train, y_train)
 
     y_pred = clf.predict(X_test)
@@ -64,7 +65,8 @@ def random_forest_boundary():
         #
         # decision tree
         #
-        clf = RandomForestClassifier(n_estimators=10, criterion="gini", max_leaf_nodes=5, random_state=0)
+        clf = RandomForestClassifier(n_estimators=10, criterion="gini", max_features="auto", max_leaf_nodes=5,
+                                     random_state=0)
         clf.fit(X, y)
 
         z = clf.predict(zz).reshape(xx.shape)
