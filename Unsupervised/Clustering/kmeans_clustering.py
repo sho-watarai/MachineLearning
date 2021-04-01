@@ -29,7 +29,7 @@ def kmeans_clustering():
     for i in range(3):
         plt.scatter(X[y_pred == i, 0], X[y_pred == i, 1], s=50, label="cluster %d" % (i + 1))
     plt.scatter(kms.cluster_centers_[:, 0], kms.cluster_centers_[:, 1], s=50, marker="x", c="red", label="centroid")
-    plt.title("$K$-means clustering")
+    plt.title("K-means clustering")
     plt.legend()
     plt.show()
 
