@@ -17,7 +17,7 @@ if __name__ == "__main__":
     y = digits.target
 
     #
-    # t-distribution Stochastic Neighbor Embedding
+    # t-distribution stochastic neighbor embedding
     #
     tsne = TSNE(n_components=2, perplexity=30, init="pca", n_iter=1000)
     X_tsne = tsne.fit_transform(X)
