@@ -13,7 +13,7 @@ img_width = 64
 
 
 def nmf_face():
-    file_list = glob.glob("../../../GAN/DCGAN/faces/*.jpg")
+    file_list = glob.glob("../../../GenerativeModel/DCGAN/faces/*.jpg")
 
     faces = np.zeros((len(file_list), img_height, img_width), dtype="float32")
     for i, file in enumerate(file_list):
